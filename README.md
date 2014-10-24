@@ -17,9 +17,7 @@ Installation Instructions
 
 	The requested set of permissions allows the app to search your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
 
-5. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! 
-
-	If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
+5. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
 
 6. You can set the script to run every day or every week using "Resources" > "Current project's triggers" on the toolbar. The script saves information on the date of the last run, and will only show recalls issued since this last-run date.
 
