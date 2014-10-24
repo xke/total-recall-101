@@ -9,15 +9,17 @@ Installation Instructions
 
 1. Go to <a href="http://www.google.com/script/start/" target="_blank">http://www.google.com/script/start/</a> and click "Start Scripting" to create a new blank project.
 
-2. Sign into your Gmail account and visit <a href="https://script.google.com/d/1FFgmhq4ZkiweXINSwXv-5_0S6OEu72Ii3DCIZ7DduYdEBNqG1KwP-1dA/edit?usp=sharing" target="_blank">Total Recall 101</a>. 
+2. Sign into your Gmail account and visit <a href="https://script.google.com/d/1FFgmhq4ZkiweXINSwXv-5_0S6OEu72Ii3DCIZ7DduYdEBNqG1KwP-1dA/edit?usp=sharing" target="_blank">Total Recall 101</a> to view the project code.
 
 3. Copy and paste the "Total Recall 101" code into your new blank project. You may rename your blank project (e.g. to "My Total Recall 101").
 
-4. In your project, go to "Run" > "totalRecall" on the toolbar. Provide the app script with authorization to run. 
+4. In your project, go to "Run" > "totalRecall" on the toolbar. Provide the app script with authorization to run.
 
-The requested set of permissions allows the app to search your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
+	The requested set of permissions allows the app to search your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
 
-5. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
+5. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! 
+
+	If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
 
 6. You can set the script to run every day or every week using "Resources" > "Current project's triggers" on the toolbar. The script saves information on the date of the last run, and will only show recalls issued since this last-run date.
 
