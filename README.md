@@ -7,7 +7,7 @@ A first step to zero-effort alerts on product recalls.
 Installation Instructions
 =========================
 
-1. Go to <a href="http://www.google.com/script/start/" target="_blank">Google Apps Script</a> and click "Start Scripting" to create a new blank project.
+1. Go to <a href="http://www.google.com/script/start/" target="_blank">Google Apps Script</a> and click "Start Scripting" to create a new "Blank Project".
 
 2. Sign into your Gmail account and visit <a href="https://script.google.com/d/1FFgmhq4ZkiweXINSwXv-5_0S6OEu72Ii3DCIZ7DduYdEBNqG1KwP-1dA/edit?usp=sharing" target="_blank">Total Recall 101</a> to view the project code.
 
