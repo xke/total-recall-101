@@ -1,6 +1,8 @@
 Total Recall 101
 ================
 
+<center><img src="http://s3.amazonaws.com/challengepost/photos/production/solution_photos/000/129/932/datas/xlarge.png"></center>
+
 A first step to zero-effort alerts on product recalls. This app checks the user's email inbox and archives for references to purchased products, including product receipts and conversations with friends. All emails remain private to the user. The "Total Recall 101" app matches the referenced products against the U.S. Consumer Product Safety Commission's recalled products list, and is able to generate emails to alert users about recalls. These alert emails can be accessed on all devices, including desktops and mobile phones running iOS and Android. This app is free and open source, and is currently available for Gmail users.
 
 
