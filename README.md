@@ -1,7 +1,7 @@
 Total Recall 101
 ================
 
-A first step to zero-effort alerts on product recalls.
+A first step to zero-effort alerts on product recalls. This app searches your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
 
 
 Installation Instructions
@@ -11,9 +11,7 @@ Installation Instructions
 
 2. Sign into your Gmail account, and copy and paste the <a href="https://script.google.com/d/1FFgmhq4ZkiweXINSwXv-5_0S6OEu72Ii3DCIZ7DduYdEBNqG1KwP-1dA/edit?usp=sharing" target="_blank">Total Recall 101</a> code into your new blank project (removing all previous code). You may rename your project (e.g. to "My Total Recall 101").
 
-3. In your project, go to "Run" > "totalRecall" on the toolbar. An authorization popup will appear. Click "Accept" on that popup.
-
-	The requested set of permissions allows the app to search your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
+3. In your project, go to "Run" > "totalRecall" on the toolbar. An authorization popup will appear. Click "Accept" on that popup. 
 
 4. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
 
