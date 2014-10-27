@@ -1,7 +1,7 @@
 Total Recall 101
 ================
 
-A first step to zero-effort alerts on product recalls. This app searches your email archive with the latest recall information and send you alert emails that help you know about relevant recalls. All your email information remains private to you.
+A first step to zero-effort alerts on product recalls. This app checks the user's email inbox and archives for references to purchased products, including product receipts and conversations with friends. All emails remain private to the user. The "Total Recall 101" app matches the referenced products against the U.S. Consumer Product Safety Commission's recalled products list, and is able to generate emails to alert users about recalls. These alert emails can be accessed on all devices, including desktops and mobile phones running iOS and Android. This app is free and open source.
 
 
 Installation Instructions
