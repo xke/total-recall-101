@@ -1,7 +1,7 @@
 Total Recall 101
 ================
 
-A first step to zero-effort alerts on product recalls. This app checks the user's email inbox and archives for references to purchased products, including product receipts and conversations with friends. All emails remain private to the user. The "Total Recall 101" app matches the referenced products against the U.S. Consumer Product Safety Commission's recalled products list, and is able to generate emails to alert users about recalls. These alert emails can be accessed on all devices, including desktops and mobile phones running iOS and Android. This app is free and open source.
+A first step to zero-effort alerts on product recalls. This app checks the user's email inbox and archives for references to purchased products, including product receipts and conversations with friends. All emails remain private to the user. The "Total Recall 101" app matches the referenced products against the U.S. Consumer Product Safety Commission's recalled products list, and is able to generate emails to alert users about recalls. These alert emails can be accessed on all devices, including desktops and mobile phones running iOS and Android. This app is free and open source, and is currently available for Gmail users.
 
 
 Installation Instructions
@@ -13,10 +13,9 @@ Installation Instructions
 
 3. In your project, go to "Run" > "totalRecall" on the toolbar. An authorization popup will appear. Click "Accept" on that popup. 
 
-4. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! If you encounter issues, you can email me at <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
+4. Wait for the script to finish running and then check your Gmail inbox. You should have received a Total Recall email! If you encounter issues, you can email <a href="mailto:xke@alum.mit.edu">xke@alum.mit.edu</a>.
 
-5. You can set the script to run every day or every week using "Resources" > "Current project's triggers" on the toolbar. The script saves information on the date of the last run, and will only show recalls issued since this last-run date.
-
+5. Set the script to run every week using "Resources" > "Current project's triggers" on the toolbar. The script saves information on the date of the last run, and will only show recalls issued since this last-run date.
 
 
 Background and Motivation
