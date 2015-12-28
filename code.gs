@@ -2,6 +2,7 @@
 
 Total Recall 101
 by @xianke for http://productsafetyapps.challengepost.com/
+updated 12/28/2015 to support latest CPSC API
 
 This script can be set to run every X days (under "Resources" -> "Current project's triggers").
 
@@ -32,10 +33,6 @@ OR PERFORMANCE OF THIS SOFTWARE.
 
 function totalRecall() {
   
-  // userId is the application key from the U.S. Consumer Product Safety Commission
-  
-  var userId = "9cf309fe-0c0d-47aa-9520-64b785048df7";
-
   // startDate & endDate can be set dynamically e.g. from last run date to today
 
   var userProperties = PropertiesService.getUserProperties();
@@ -46,32 +43,26 @@ function totalRecall() {
   startDate = lastRunDate; // dynamic option 
 
   if (!lastRunDate) {
-    startDate = "2014-05-21"; // static override
+    startDate = "2015-12-15"; // static override
   }
-
+  
   var todaysDate = Utilities.formatDate(new Date(), "GMT", "yyyy-MM-dd");
   var endDate = todaysDate;  
 
-  // get recall information
+  // get recall information, as of 12/2015
   
-  var url = "http://www.cpsc.gov/cgibin/CPSCUpcWS/CPSCUpcSvc.asmx/getRecallByDate?startDate="+startDate+"&endDate="+endDate+"&userId="+userId+"&password="
-  var xml = UrlFetchApp.fetch(url);
-
-  // example XML:
-  /*
-  <?xml version="1.0" encoding="utf-8"?>
-  <message outcome="success" transactionID="5C471C62-1160-4025-B6AB-0AE884C7CA5D">
-  <results>
-  <result UPC="" recallNo="14187" recallURL="http://cs.cpsc.gov/ConceptDemo/SearchCPSC.aspx?SearchCategory=Recalls%20News%20Releases&amp;category=995,1098,990,991,992,993,994,1031&amp;autodisplay=true&amp;query=14187" recDate="2014-05-21" y2k="114187" manufacturer="Nest Labs" type="Smoke Detectors/Alarms" prname="Nest Protect: Smoke + CO Alarm" hazard="Safety Equipment Malfunction" country_mfg="China" />
-  </results>
-  </message>
+  // reference: http://www.cpsc.gov/Global/info/Recall/CPSC-Recalls-Retrieval-Web-Services-Programmers-Guide_3-25-2015.pdf
+  /* example json: 
+     http://www.saferproducts.gov/restwebservices/Recall?format=json&RecallNumber=16066
+     http://www.saferproducts.gov/restwebservices/Recall?format=json&RecallDateStart=2015-12-15
   */
-  
-  // parse XML 
-  
-  var document = XmlService.parse(xml);
-  var results = document.getRootElement().getChild('results').getChildren('result');
 
+  var url = "http://www.saferproducts.gov/restwebservices/Recall?format=json&RecallDateStart="+startDate+"&RecallDateEnd="+endDate
+  var results = JSON.parse(UrlFetchApp.fetch(url));
+
+
+  // parse JSON 
+  
   //Logger.log("number of results: "+results.length);
 
   if (!results || results.length ==0) {
@@ -91,19 +82,21 @@ function totalRecall() {
   for (var i = 0; i < results.length; i++) {
     var result = results[i];
     
-    var recallManufacturer = result.getAttribute('manufacturer').getValue();
-    var recallURL = result.getAttribute('recallURL').getValue();
-    var recallPrname = result.getAttribute('prname').getValue();
+    var recallURL = result['URL'];
+    var recallProductName = result['Products'][0]['Name'] // first product name
     
-    //Logger.log(recallPrname);
-    //Logger.log(recallURL);
+    // first manufacturer name, if available (sometimes it's not available)
+    var recallManufacturer = ""
+    if (result['Manufacturers'].length > 0) {
+       recallManufacturer = " - " + result['Manufacturers'][0]['Name']
+    }
 
-    htmlBody += "<a href=\""+ recallURL+ "\">" + recallManufacturer + " - " + recallPrname + "</a>";
+    htmlBody += "<a href=\""+ recallURL+ "\">" + recallProductName + recallManufacturer + "</a>";
     
     
     // get matching email threads
     
-    var threads = GmailApp.search(recallPrname);
+    var threads = GmailApp.search(recallProductName);
     if (threads.length>0) {
       totalMatches++;
       htmlBody += " <font color=\"red\">(Match! Please check if you have this product)</font> ";
