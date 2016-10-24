@@ -3,6 +3,7 @@
 Total Recall 101
 by @xianke for http://productsafetyapps.challengepost.com/
 updated 12/28/2015 to support latest CPSC API
+tested 10/24/2016
 
 This script can be set to run every X days (under "Resources" -> "Current project's triggers").
 
@@ -43,7 +44,7 @@ function totalRecall() {
   startDate = lastRunDate; // dynamic option 
 
   if (!lastRunDate) {
-    startDate = "2015-12-15"; // static override
+    startDate = "2016-10-15"; // static override
   }
   
   var todaysDate = Utilities.formatDate(new Date(), "GMT", "yyyy-MM-dd");
@@ -63,7 +64,7 @@ function totalRecall() {
 
   // parse JSON 
   
-  //Logger.log("number of results: "+results.length);
+  Logger.log("number of results: "+results.length);
 
   if (!results || results.length ==0) {
     htmlBody = "No product recalls";
@@ -85,6 +86,7 @@ function totalRecall() {
     var recallURL = result['URL'];
     var recallProductName = result['Products'][0]['Name'] // first product name
     
+
     // first manufacturer name, if available (sometimes it's not available)
     var recallManufacturer = ""
     if (result['Manufacturers'].length > 0) {
@@ -135,4 +137,3 @@ function totalRecall() {
   userProperties.setProperty('LAST_EMAIL_DATE', todaysDate);
 
 }
-
